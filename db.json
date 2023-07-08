@@ -1,0 +1,16 @@
+{
+    "productos":[
+        {
+            "id": "1",
+            "categoria": "Star Wars",
+            "nombre": "Producto 1",
+            "imagen": "imagen1.jpg",
+            "precio": "1000"
+        },
+        {
+            
+        }
+
+    ]
+
+}
