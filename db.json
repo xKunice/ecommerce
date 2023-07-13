@@ -69,8 +69,42 @@
             "nombre": "Taza de Flash",
             "imagen": "assets/img/dc/tazaFlash.png",
             "precio": "2000"
+        },
+        {
+            "id": "11",
+            "categoria": "marvel",
+            "nombre": "Figura Deadpool",
+            "imagen": "assets/img/marvel/deadpool.png",
+            "precio": "2000"
+        },
+        {
+            "id": "12",
+            "categoria": "marvel",
+            "nombre": "Figura de Iron Man",
+            "imagen": "assets/img/marvel/IronMan.png",
+            "precio": "2000"
+        },
+        {
+            "id": "13",
+            "categoria": "marvel",
+            "nombre": "Figura Thor",
+            "imagen": "assets/img/marvel/Thor.png",
+            "precio": "2000"
+        },
+        {
+            "id": "14",
+            "categoria": "marvel",
+            "nombre": "Gorra Spidey",
+            "imagen": "assets/img/marvel/gorraSpiderMan.png",
+            "precio": "2000"
+        },
+        {
+            "id": "15",
+            "categoria": "marvel",
+            "nombre": "Gorra Deadpool",
+            "imagen": "assets/img/marvel/gorroDeadPool.png",
+            "precio": "2000"
         }
-
 
     ]
     
