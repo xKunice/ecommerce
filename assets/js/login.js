@@ -41,3 +41,14 @@ form.addEventListener('submit', (event) => {
     window.location.href = './login.html'
   }
 });
+
+
+if (localStorage.getItem('productos')) {
+  // Los datos están guardados en el localStorage
+  // Realizar las acciones necesarias aquí
+  console.log('Los productos están guardados en el localStorage');
+  console.log(JSON.parse(localStorage.getItem('productos')));
+} else {
+  // Los datos no están guardados en el localStorage
+  console.log('No se encontraron productos en el localStorage');
+}

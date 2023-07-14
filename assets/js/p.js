@@ -1,7 +1,18 @@
-
- fetch('db.json')
+fetch('db.json')
    .then(response => response.json())
    .then(data => { 
+      
+    if (localStorage.getItem('productos')) {
+        
+        const productosGuardados = JSON.parse(localStorage.getItem('productos'));
+        console.log(productosGuardados);
+        console.log(data.productos);
+        data.productos = productosGuardados;
+      } else {
+        // Los datos no están guardados en el localStorage
+        console.log('No se encontraron productos en el localStorage');
+      }
+
          const mirar = document.getElementById('btnMirar');
          mirar.addEventListener('click', () => {    
              const contenedorProductos = document.getElementById('ShowOption');
@@ -62,6 +73,7 @@
                      "precio": precioForm
                  };
                  data.productos.push(nuevoProducto)
+                 localStorage.setItem('productos', JSON.stringify(data.productos)); 
              })
          })
          const editar = document.getElementById('btnEditar');
@@ -168,6 +180,7 @@
                                  };
                                  const index = data.productos.indexOf(productoAeditarEncontrado);
                                  data.productos.splice(index, 1, productoEditado);
+                                 localStorage.setItem('productos', JSON.stringify(data.productos)); 
                              })
                          }else{
                              console.log('no se encontro el producto');
@@ -229,6 +242,7 @@
                          if(productoAeliminarEncontrado){
                              const index = data.productos.indexOf(productoAeliminarEncontrado);
                              data.productos.splice(index, 1);
+                             localStorage.setItem('productos', JSON.stringify(data.productos)); 
                          }else{
                              console.log('no se encontro el producto');
                          
@@ -238,4 +252,27 @@
              };          
          });
      })
+
+
+     localStorage.setItem('productos', JSON.stringify(data.productos));
+     const productosGuardados = JSON.parse(localStorage.getItem('productos'));
+
+     if (JSON.stringify(data.productos) === JSON.stringify(productosGuardados)) {
+       console.log('Los productos se guardaron correctamente');
+       alert('Los productos se guardaron correctamente');
+     } else {
+       console.log('Los productos no se guardaron correctamente');
+       alert('Los productos no se guardaron correctamente');
+     }
+
+
+
     });
+
+const btnInicio = document.getElementById('Inicio');
+
+btnInicio.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.href = './index.html';
+});
+
