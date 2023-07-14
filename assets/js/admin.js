@@ -70,4 +70,61 @@ fetch('db.json')
         
     });
 
+    const editar = document.getElementById('btnEditar');
+    editar.addEventListener('click', () => {
+        const divContenedor = document.createElement('div');
+        const contenedorProductos = document.getElementById('ShowOption');
+        contenedorProductos.innerHTML='';
+        divContenedor.classList.add('contenedor__editar');
+        divContenedor.innerHTML=`
+            <h3>Editar Producto</h3>
+            <p>Seleccione el producto que desea editar</p>
+            <form>
+                <select id="categoria" name="categoria">
+                    <option value="marvel">Marvel</option>
+                    <option value="dc">DC</option>
+                    <option value="starWars">StarWars</option>
+                </select>
+                <button type="submit">Editar Producto</button> 
+            </form>
+        `;
+        contenedorProductos.appendChild(divContenedor);
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            divContenedor.innerHTML='';
+            const categoriaForm = form.elements.categoria.value;
+            data.productos.forEach((producto) => {
+                if(producto.categoria === categoriaForm){
+                    const divContenedorProducto = document.createElement('div');
+                    divContenedorProducto.classList.add('contenedor__producto');
+                    divContenedorProducto.id = `${producto.id}`
+                    divContenedorProducto.innerHTML=`
+                    <div class="contenedor__img">
+                        <img src="${producto.imagen}" alt="${producto.nombre}">
+                    </div>
+                    <div class="contenedor__Descripcion">
+                        <h3>${producto.nombre}</h3>
+                        <span>$${producto.precio}</span>
+                        <button class="btn__editar--producto" >Editar</button>
+                    </div>
+                    `;
+                    contenedorProductos.appendChild(divContenedorProducto);
+                }
+            });
+
+            const btnEditarProducto = document.getElementsByClassName('btn__editar--producto');
+            console.log(btnEditarProducto);
+            for (let i = 0; i < btnEditarProducto.length; i++) {
+                btnEditarProducto[i].addEventListener('click', () => {
+                    const productoAEditar = btnEditarProducto[i].parentNode.parentNode;
+                    const idProductoAEditar = productoAEditar.id;
+                    console.log(idProductoAEditar);
+                    
+                });
+            }
+           
+         });
+         
+    });
 });
