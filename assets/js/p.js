@@ -134,7 +134,7 @@
                                  <label for="nombre">Nombre</label>
                                  <input value="${productoAeditarEncontrado.nombre}" id="nombre" name="nombre" type="text" placeholder="nombre producto" required></input>
                                  <label for="categoria">Categoria</label>
-                                 <select value="${productoAeditarEncontrado.categoria}" id="categoria" name="categoria">
+                                 <select  id="categoria" name="categoria">
                                  <option value="marvel">Marvel</option>
                                  <option value="dc">DC</option>
                                  <option value="starWars">StarWars</option>
@@ -146,7 +146,11 @@
                                  <button type="submit">Editar Producto</button>
                          </div>
                              `;
+
                              contenedorProductos.appendChild(divContenedorProductoEditar);
+                            const selectCategoria = document.getElementById('categoria');
+                            selectCategoria.value = productoAeditarEncontrado.categoria;
+
                              const formEditar = document.querySelector('form');
                              formEditar.addEventListener('submit', (event) => {
                                  event.preventDefault();
@@ -168,6 +172,7 @@
                          }else{
                              console.log('no se encontro el producto');
                          }
+                         
                      });
                  };
              })
