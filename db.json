@@ -4,105 +4,105 @@
             "id": "1",
             "categoria": "starWars",
             "nombre": "baby yoda",
-            "imagen": "assets/img/starWars/babyYoda.png",
+            "imagen": "https://i.ibb.co/dprZTwM/babyYoda.png",
             "precio": "1000"
         },
         {
             "id": "2",
             "categoria": "starWars",
             "nombre": "Figura de Mandalorian",
-            "imagen": "assets/img/starWars/figuraMandalorian.png",
+            "imagen": "https://i.ibb.co/kM6S9kk/figura-Mandalorian.png",
             "precio": "1000"
         },
         { 
             "id": "3",
             "categoria": "starWars",
             "nombre": "Llavero de Storm Trooper",
-            "imagen": "assets/img/starWars/llaveroStormTrooper.png",
+            "imagen": "https://i.ibb.co/6PKrxXf/llavero-Storm-Trooper.png",
             "precio": "2000"
         },
         {
             "id": "4",
             "categoria": "starWars",
             "nombre": "Taza de Darth Vader",
-            "imagen": "assets/img/starWars/TazaDarthVader.png",
+            "imagen": "https://i.ibb.co/23jvM7g/Taza-Darth-Vader.png",
             "precio": "2000"
         },
         {
             "id": "5",
             "categoria": "starWars",
             "nombre": "Peluche chewbacca",
-            "imagen": "assets/img/starWars/pelucheChewbaca.png",
+            "imagen": "https://i.ibb.co/R4sgtwc/peluche-Chewbaca.png",
             "precio": "2000"
         },
         {
             "id": "6",
             "categoria": "dc",
             "nombre": "Cartera de Batman",
-            "imagen": "assets/img/dc/carteraBatman.png",
+            "imagen": "https://i.ibb.co/xj5HkXW/cartera-Batman.png",
             "precio": "2000"
         },
         {
             "id": "7",
             "categoria": "dc",
             "nombre": "Gorro de Batman",
-            "imagen": "assets/img/dc/gorroBatman.png",
+            "imagen": "https://i.ibb.co/t2Fpqyq/gorro-Batman.png",
             "precio": "2000"
         },
         {
             "id": "8",
             "categoria": "dc",
             "nombre": "Figura Harley Quinn",
-            "imagen": "assets/img/dc/harleyQueen.png",
+            "imagen": "https://i.ibb.co/ThSdBRj/harley-Queen.png",
             "precio": "2000"
         },
         {
             "id": "9",
             "categoria": "dc",
             "nombre": "Figura de Robin",
-            "imagen": "assets/img/dc/robin.png",
+            "imagen": "https://i.ibb.co/Jz4gD7C/robin.png",
             "precio": "2000"
         },
         {
             "id": "10",
             "categoria": "dc",
             "nombre": "Taza de Flash",
-            "imagen": "assets/img/dc/tazaFlash.png",
+            "imagen": "https://i.ibb.co/jzcypZV/taza-Flash.png",
             "precio": "2000"
         },
         {
             "id": "11",
             "categoria": "marvel",
             "nombre": "Figura Deadpool",
-            "imagen": "assets/img/marvel/deadpool.png",
+            "imagen": "https://i.ibb.co/Twkz6cC/deadpool.png",
             "precio": "2000"
         },
         {
             "id": "12",
             "categoria": "marvel",
             "nombre": "Figura de Iron Man",
-            "imagen": "assets/img/marvel/IronMan.png",
+            "imagen": "https://i.ibb.co/sjtHJYM/IronMan.png",
             "precio": "2000"
         },
         {
             "id": "13",
             "categoria": "marvel",
             "nombre": "Figura Thor",
-            "imagen": "assets/img/marvel/Thor.png",
+            "imagen": "https://i.ibb.co/MZHFjb4/Thor.png",
             "precio": "2000"
         },
         {
             "id": "14",
             "categoria": "marvel",
             "nombre": "Gorra Spidey",
-            "imagen": "assets/img/marvel/gorraSpiderMan.png",
+            "imagen": "https://i.ibb.co/LQcYFDW/gorra-Spider-Man.png",
             "precio": "2000"
         },
         {
             "id": "15",
             "categoria": "marvel",
             "nombre": "Gorra Deadpool",
-            "imagen": "assets/img/marvel/gorroDeadPool.png",
+            "imagen": "https://i.ibb.co/Ky5fsjj/gorro-Dead-Pool.png",
             "precio": "2000"
         }
 

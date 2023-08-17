@@ -3,19 +3,24 @@
     <head>
         <meta charset="UTF-8">
         <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" href="assets/css/reset.css">
+        <link rel="stylesheet" href="assets/css/normalize.css">
+        <link rel="stylesheet" href="assets/css/ap.css">
+        <link rel="stylesheet" href="assets/css/index.css">
         <title>Inicio</title>
     </head>
     <body>
         <header>
-            <h1>Ecommerce</h1>
+            <h1>NICE KUNAIS</h1>
             <nav>
-                <div>
-                    <img src="" alt="logo Ecommerce">
+                <div class="logo">
+                    <img src="https://i.ibb.co/WpBvZF3/2be6a822-b6a2-43c9-87a1-4f139da39e2e.png" alt="logo Kunice">
                 </div>
-                <div>
-                    <input type="search" placeholder="Buscar...">
+                <div class="search__bar">
+                    <input type="search" id="busqueda" placeholder="Buscar...">
+                    <button id="btnBusqueda">Buscar</button>
                 </div>
-                <div>
+                <div class="login">
                     <button type="submit" id="Login">Login</button>
                 </div>
             </nav>
@@ -23,11 +28,12 @@
         </header>
         <main>
             <section class="ads">
-                <img src="" alt="">
-                <img src="" alt="">
-                <img src="" alt="">
+                <span>AGOSTO PROMOCIONAL</span>
+                <p>30% de Descuento en los productos de  STAR WARS</p>
+                    <button type="button">Ver Productos</button>
             </section>
-            <section class="products">
+            <section id="resultadoBusqueda"></section>
+            <section class="products" id="productosTienda">
                 <div class="marvel" id="marvel">
                     <h2>marvel</h2>
                 </div>

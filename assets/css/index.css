@@ -1,0 +1,141 @@
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+h1{
+  display: none;
+}
+.logo{
+    flex: 10;
+    height: auto;
+
+}
+
+.logo img{
+  width: 100%;
+}
+
+.search__bar{
+    flex: 5;
+    display: flex;
+    align-items: center;
+    width: 380px;
+}
+.search__bar input {
+  width: 320px;
+}
+  .search__bar button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #555;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .login{
+    flex:90;
+    border: none;
+    color: white;
+    justify-content: flex-end;
+    padding: 0;
+    align-items: center;
+  }
+  .login button{
+    display: block;
+    margin-left: 900px;
+    width: 300px;
+    height: 100%;
+    color: white;
+    cursor: pointer;
+    border: nones;
+    background-color: #555;
+    padding: 5px 10px;
+  }
+  .ads{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    align-items: start;
+    background-image: url(https://i.ibb.co/0KZRNjF/banner.jpg) ;
+    background-size: cover;
+    background-position: center;
+    flex-direction: column;
+
+  }
+  .ads span{
+    color: aliceblue;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    margin-top: auto;
+    margin-left: 3rem;
+  }
+  .ads p{
+    color: yellow;
+    font-size: 1em;
+    margin-left: 3rem;
+  }
+  .ads button{
+    border: none; 
+  color: white; 
+  padding: 14px 28px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  background-color: #007bbf;
+  margin-top: 1rem;
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+  transition: 1.5s;
+}
+.ads button:hover{
+  cursor: pointer;
+  background-color: yellow;
+  color: black;
+}
+.products{
+  margin-left: 5rem;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+
+
+}
+
+h2{
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.marvel, .starWars, .dc{
+  display: flex;
+  flex-direction: row;
+}
+.card{
+  display: flex;
+  border: solid ;
+  flex-direction: column;
+  margin: auto;
+  width: 200px;
+  
+}
+.contenedor__img img{
+  width: 100%;
+
+}
+.contenedor__descripcion h3,
+.contenedor__descripcion span,
+.contenedor__descripcion button{
+display: flex;
+align-items: center;
+text-align: center;
+justify-content: center;
+font-weight: bold;
+margin: auto;
+
+}
+
