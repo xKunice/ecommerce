@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="#">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/login.css">
     <title>Login</title>
 </head>
 <body>
@@ -12,9 +13,13 @@
     </header>
     <main>
         <section>
-            <form id="login-form">
-                <input type="text" name="usuario" placeholder="Usuario">
-                <input type="password" name="password" placeholder="Contraseña">
+            <h2>Iniciar Sesion</h2>
+            <span>usuario y pass = admin</span>
+            <form id="login-form"> 
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario "name="usuario" placeholder="Usuario" required>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
                 <button type="submit">Ingresar</button>
             </form>
         </section>

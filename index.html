@@ -5,8 +5,8 @@
         <link rel="shortcut icon" href="#">
         <link rel="stylesheet" href="assets/css/reset.css">
         <link rel="stylesheet" href="assets/css/normalize.css">
-        <link rel="stylesheet" href="assets/css/ap.css">
         <link rel="stylesheet" href="assets/css/index.css">
+        <link rel="stylesheet" href="assets/css/contacto.css">
         <title>Inicio</title>
     </head>
     <body>
@@ -27,10 +27,10 @@
 
         </header>
         <main>
-            <section class="ads">
+            <section class="ads" id="ads">
                 <span>AGOSTO PROMOCIONAL</span>
                 <p>30% de Descuento en los productos de  STAR WARS</p>
-                    <button type="button">Ver Productos</button>
+                    <button id="btnVerProductosBanner" type="button">Ver Productos</button>
             </section>
             <section id="resultadoBusqueda"></section>
             <section class="products" id="productosTienda">
@@ -46,22 +46,47 @@
                     <h2>DC</h2>
                 </div>
             </section>
-            <section class="contacto">
-                <div class="contacto">
-                    <h2>Contacto</h2>
-                    <form action="">
-                        <input type="text" placeholder="Nombre">
-                        <input type="email" placeholder="Email">
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
-                        <button type="submit">Enviar</button>
+            <section class="contacto" id="contacto">
+                <h2 class="subtitle">contacto</h2>
+                <div class="contact__container">
+                    <div class="contact__container--img">
+                        <img class="contact__img" src="https://i.ibb.co/WpBvZF3/2be6a822-b6a2-43c9-87a1-4f139da39e2e.png" alt="">
+                    </div>
+                    <form class="contact__form" id="contact">
+                        <div class="contact__form--section">
+                            <label class="contact__form--label" for="name">Nombre Completo</label>
+                            <input class="contact__form--input" name="name" type="text" id="name">
+                            <p id="nameMessageError"></p>
+                        </div>
+                        <div class="contact__form--section">
+                            <label class="contact__form--label" for="email">Correo electronico</label>
+                            <input class="contact__form--input"name="email" type="email" id="email">
+                            <p id="emailMessageError"></p>
+                        </div>
+                        <div class="contact__form--section">
+                            <label class="contact__form--label" for="subject">Asunto</label>
+                            <input class="contact__form--input"name="subject" id="subject" type="text">
+                            <p id="subjectMessageError"></p>
+                        </div>
+                        <div class="contact__form--section">
+                            <label class="contact__form--label" for="message">Mensaje</label>
+                            <textarea class="contact__form--textarea" name="message" id="message" cols="30" rows="10"></textarea>
+                            <p id="messageMessageError"></p>
+                        </div>
+                        <div class="contact__form--section">
+                            <button class="contact__form--btn" type="submit">enviar</button>
+                        </div>
+                        
                     </form>
-                </div>    
+                </div>
+                <a style="opacity: 0;" href="mailto=anfeberi@gmail.com" id="mail">Mail</a>
             </section>
         </main>
         <footer>
-            <span>Desarrollado por Andres Betancourt - 2023</span>
+            <span class="footercopy">Desarrollado por Andres Betancourt - 2023</span>
         </footer>
         <script src="assets/js/index.js"></script>
+        <script src="assets/js/contacto.js"></script>
         
     </body>
     

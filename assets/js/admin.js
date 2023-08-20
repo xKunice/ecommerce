@@ -21,12 +21,14 @@ fetch('db.json')
                  const divContenedor = document.createElement('div'); 
                  divContenedor.classList.add('contenedor__productos');
                  divContenedor.innerHTML = `
+                    <div class=card>
                      <div class="contenedor__img">
                          <img src="${producto.imagen}" alt="${producto.nombre}">
                      </div>
                      <div class="contenedor__Descripcion">
                          <h3>${producto.nombre}</h3>
                          <span>$${producto.precio}</span>
+                     </div>
                      </div>`;
                  contenedorProductos.appendChild(divContenedor);
              });  
@@ -43,7 +45,7 @@ fetch('db.json')
                      <label for="id">Id</label>
                      <input id="id" name="id"type="number" placeholder="id del producto" min="1" max="500" required></input>
                      <label for="nombre">Nombre</label>
-                     <input id="nombre" name="nombre" type="text" placeholder="nombre producto" required></input>
+                     <input id="nombre" name="nombre" type="text" placeholder="nombre producto" maxlength="20" required></input>
                      <label for="categoria">Categoria</label>
                      <select id="categoria" name="categoria">
                        <option value="marvel">Marvel</option>
@@ -54,27 +56,55 @@ fetch('db.json')
                      <input id="imagen" name="imagen" type="text" placeholder="url imagen" required></input>
                      <label for="precio">Precio</label>
                      <input id="precio" name="precio" type="number" placeholder="precio" min="1" max="99999" required></input>
+                     <label for="descipcion">Descripcion</label>
+                     <textarea name="descripcion"id="descripcion" maxlength="150" required></textarea>
                      <button type="submit">Crear Producto</button>
-                 </form>`;
+                     
+                 </form>
+                 <div id="error" style="color: red"></div>`;
                  contenedorProductos.appendChild(divContenedor)
              const form = document.querySelector('form');
              form.addEventListener('submit', (event) => {
-                 const idForm = form.elements.id.value;
-                 const nombreForm = form.elements.nombre.value;
-                 const categoriaForm = form.elements.categoria.value;
-                 const precioForm = form.elements.precio.value;
-                 const imagenForm = form.elements.imagen.value;
-                 event.preventDefault()
-                 const nuevoProducto={
-                     "id": idForm,
-                     "categoria": categoriaForm,
-                     "nombre": nombreForm,
-                     "imagen": imagenForm,
-                     "precio": precioForm
-                 };
-                 data.productos.push(nuevoProducto)
-                 localStorage.setItem('productos', JSON.stringify(data.productos)); 
+
+                const errorMessage = document.getElementById('error');
+                event.preventDefault();
+                const productName = document.getElementById('nombre').value;
+                const productPrice = document.getElementById('precio').value;
+                const productDescription = document.getElementById('descripcion').value;
+
+                if (productName.trim() === '' || productPrice.trim() === '' || productDescription.trim() === '') {
+                    errorMessage.textContent = 'Ninguno de los campos puede estar en blanco.';
+                } else if (productName.length > 20) {
+                    errorMessage.textContent = 'El nombre del producto debe tener máximo 20 caracteres.';
+                } else if (!/^\d+$/.test(productPrice)) {
+                    errorMessage.textContent = 'El precio debe ser un número válido.';
+                } else if (productDescription.length > 150) {
+                    errorMessage.textContent = 'La descripción del producto debe tener máximo 150 caracteres.';
+                } else {
+
+                    const idForm = form.elements.id.value;
+                    const nombreForm = form.elements.nombre.value;
+                    const categoriaForm = form.elements.categoria.value;
+                    const precioForm = form.elements.precio.value;
+                    const imagenForm = form.elements.imagen.value;
+                
+                    event.preventDefault()
+                    const nuevoProducto={
+                        "id": idForm,
+                        "categoria": categoriaForm,
+                        "nombre": nombreForm,
+                        "imagen": imagenForm,
+                        "precio": precioForm
+                    };
+                    data.productos.push(nuevoProducto)
+                    localStorage.setItem('productos', JSON.stringify(data.productos)); 
+                    alert("Creado Correctamente");
+                
+                }
+    
+  
              })
+             
          })
          const editar = document.getElementById('btnEditar');
          editar.addEventListener('click', () => {
@@ -106,6 +136,7 @@ fetch('db.json')
                          divContenedorProducto.classList.add('contenedor__producto');
                          divContenedorProducto.id = `${producto.id}`
                          divContenedorProducto.innerHTML=`
+                         
                          <div class="contenedor__img">
                              <img src="${producto.imagen}" alt="${producto.nombre}">
                          </div>
@@ -114,6 +145,7 @@ fetch('db.json')
                              <span>$${producto.precio}</span>
                              <button class="btn__editar--producto" >Editar</button>
                          </div>
+                         
                          `;
                          contenedorProductos.appendChild(divContenedorProducto);
                      }
@@ -131,7 +163,7 @@ fetch('db.json')
                              const divContenedorProductoEditar = document.createElement('div');
                              divContenedorProductoEditar.classList.add('contenedor__producto--editar');
                              divContenedorProductoEditar.innerHTML=`
-                             <div class="contenedor__img">
+                             <div class="contenedor__img1">
                              <img src="${productoAeditarEncontrado.imagen}" alt="${productoAeditarEncontrado.nombre}">
                          </div>
                          <div class="contenedor__Descripcion">
@@ -181,6 +213,7 @@ fetch('db.json')
                                  const index = data.productos.indexOf(productoAeditarEncontrado);
                                  data.productos.splice(index, 1, productoEditado);
                                  localStorage.setItem('productos', JSON.stringify(data.productos)); 
+                                 alert('se edito el producto correctamente')
                              })
                          }else{
                              console.log('no se encontro el producto');
@@ -197,8 +230,8 @@ fetch('db.json')
              contenedorProductos.innerHTML='';
              divContenedor.classList.add('contenedor__editar');
              divContenedor.innerHTML=`
-                 <h3>Editar Producto</h3>
-                 <p>Seleccione el producto que desea editar</p>
+                 <h3>Eliminar Producto</h3>
+                 <p>Seleccione el producto que desea Eliminar</p>
                  <form>
                      <select id="categoria" name="categoria">
                          <option value="marvel">Marvel</option>
@@ -220,6 +253,7 @@ fetch('db.json')
                              divContenedorProducto.classList.add('contenedor__producto');
                              divContenedorProducto.id = `${producto.id}`
                              divContenedorProducto.innerHTML=`
+                             
                              <div class="contenedor__img">
                                  <img src="${producto.imagen}" alt="${producto.nombre}">
                              </div>
@@ -228,6 +262,7 @@ fetch('db.json')
                                  <span>$${producto.precio}</span>
                                  <button class="btn__eliminar--producto" >Eliminar</button>
                              </div>
+                            
                              `;
                              contenedorProductos.appendChild(divContenedorProducto);
                      }
@@ -242,15 +277,16 @@ fetch('db.json')
                          if(productoAeliminarEncontrado){
                              const index = data.productos.indexOf(productoAeliminarEncontrado);
                              data.productos.splice(index, 1);
-                             localStorage.setItem('productos', JSON.stringify(data.productos)); 
+                             localStorage.setItem('productos', JSON.stringify(data.productos));
+                             alert('Se elimino el producto recargue la pagina') 
                          }else{
                              console.log('no se encontro el producto');
                          
                         };
                      
-                 });
-             };          
-         });
+                    });
+                 };          
+            });
      })
 
 
@@ -259,10 +295,8 @@ fetch('db.json')
 
      if (JSON.stringify(data.productos) === JSON.stringify(productosGuardados)) {
        console.log('Los productos se guardaron correctamente');
-       alert('Los productos se guardaron correctamente');
      } else {
-       console.log('Los productos no se guardaron correctamente');
-       alert('Los productos no se guardaron correctamente');
+       console.log('Los productos no se guardaron correctamente');  
      }
 
 

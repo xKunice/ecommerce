@@ -1,3 +1,4 @@
+
 nav{
     display:flex;
     justify-content: space-between;
@@ -36,6 +37,10 @@ h1{
     cursor: pointer;
   }
 
+  .search__bar button:hover{
+    background-color: #f46da7;
+  }
+
   .login{
     flex:90;
     border: none;
@@ -54,6 +59,10 @@ h1{
     border: nones;
     background-color: #555;
     padding: 5px 10px;
+  }
+
+  .login button:hover{
+    background-color: #f46da7;
   }
   .ads{
     display: flex;
@@ -105,19 +114,27 @@ h1{
 
 }
 
+.marvel, .starWars, .dc{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+  
+}
+
+
 h2{
   font-weight: bold;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 2rem;
   text-transform: uppercase;
+  width: 100%;
+  margin-bottom: 2rem;
+  margin-top: 2rem;  
 }
-.marvel, .starWars, .dc{
-  display: flex;
-  flex-direction: row;
-}
+
 .card{
   display: flex;
-  border: solid ;
   flex-direction: column;
   margin: auto;
   width: 200px;
@@ -128,8 +145,7 @@ h2{
 
 }
 .contenedor__descripcion h3,
-.contenedor__descripcion span,
-.contenedor__descripcion button{
+.contenedor__descripcion span{
 display: flex;
 align-items: center;
 text-align: center;
@@ -138,4 +154,71 @@ font-weight: bold;
 margin: auto;
 
 }
+.contenedor__descripcion button{
+  display: flex;
+align-items: center;
+text-align: center;
+justify-content: center;
+font-weight: bold;
+margin: auto; 
+color: white; 
+  padding: 10px 10px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  background-color: #007bbf;
+  border: none;
+  transition: .5s;
+}
 
+.contenedor__descripcion button:hover{
+  cursor: pointer;
+  background-color: yellow;
+  color: black;
+}
+#regresartienda{
+  border: none; 
+  color: yellow; 
+  padding: 14px 28px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  background-color: red;
+  border-color: yellow;
+  border: solid;
+  margin-top: 1rem;
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+  transition: .5s;
+}
+
+#regresartienda:hover{
+  background-color: #555;
+  color: palevioletred;
+}
+
+footer{
+  text-align: center;
+}
+
+.footercopy{
+  font-size: 2rem;
+}
+
+#regresar{
+  border: none; 
+  color: yellow; 
+  padding: 14px 28px; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  background-color: red;
+  border-color: yellow;
+  border: solid;
+  margin-top: 1rem;
+  margin-left: 3rem;
+  margin-bottom: 3rem;
+  transition: .5s;
+}
+
+#regresar:hover{
+  background-color: #555;
+  color: palevioletred;
+}

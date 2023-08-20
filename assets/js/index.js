@@ -1,21 +1,3 @@
-const slider = document.querySelector('.slider');
-const punto = document.querySelectorAll('.punto');
-
-punto.forEach((cadaPunto , i) =>{
-  punto[i].addEventListener('click',()=>{
-
-    let posicion = i;
-
-    let operacion = posicion * -50;
-    slider.style.transform = `translateX${ operacion}%`;
-    punto.forEach((cadaPunto, i)=>{
-      punto[i].classList.remove('activo');
-    })
-    punto[i].classList.add('activo');
-  })
-})
-
-
 fetch('db.json')
   .then(response => response.json())
   .then(data => {
@@ -72,8 +54,6 @@ fetch('db.json')
       if(busqueda.value === '') {
         alert('Ingrese un producto a buscar');
         return;
-      }else{
-        alert('Buscando producto');
       }
       if(productoEncontrado){
         productoTienda.style.display = 'none';
@@ -81,13 +61,15 @@ fetch('db.json')
         alert('Producto encontrado');
         resultadoBusqueda.innerHTML = `
         <button id ="regresar">Regresar a la tienda</button>
+        <div class=card>
         <div class="contenedor__img">
         <img src="${productoEncontrado.imagen}" alt="${productoEncontrado.nombre}">
         </div>
-        <div class="contenedor__Descripcion">
+        <div class="contenedor__descripcion">
         <h3>${productoEncontrado.nombre}</h3>
         <span>$${productoEncontrado.precio}</span>
         <button>Agregar al carrito</button>
+      </div>
       </div>
         `;
         const btnRegresar = document.getElementById('regresar');
@@ -98,7 +80,6 @@ fetch('db.json')
           resultadoBusqueda.innerHTML = '';
       });
 }
-
       }else{
         alert('No se encontro el producto');
     
@@ -106,12 +87,42 @@ fetch('db.json')
     
     
     });
-    
+    const btnVerProductosBanner =document.getElementById('btnVerProductosBanner');
+
+  btnVerProductosBanner.addEventListener('click', (event) =>{
+    event.preventDefault();
+    const productosMarvel = document.getElementById('marvel');
+    const productosDc = document.getElementById('dc');
+    const ads = document.getElementById('ads');
+    const divVerProductos = document.createElement('div');
+    const productosStarWars = document.getElementById('starwars');
+    btnVerProductosBanner.style.display = 'none';
+
+    divVerProductos.classList.add('divVerProductos');
+    productosDc.style.display ='none';
+    productosMarvel.style.display = 'none';
+    divVerProductos.innerHTML=`
+      <button id ="regresartienda">Regresar a la Tienda</button>
+    `;
+    ads.appendChild(divVerProductos);
+
+    const btnRegresar = document.getElementById('regresartienda');
+      if (btnRegresar) {
+        btnRegresar.addEventListener('click', (event) => {
+          event.preventDefault();
+          // Restaura la visualización de los elementos ocultos
+          productosDc.style.display = 'flex';
+          productosMarvel.style.display = 'flex';
+          btnVerProductosBanner.style.display = 'block';
+          // Elimina el div de productos agregado anteriormente
+          ads.removeChild(divVerProductos);
+        });
+    };
 
 
-
-
-
+  
+  });
+  
     
   })
   .catch(error => {
